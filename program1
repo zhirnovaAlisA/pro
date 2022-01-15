@@ -1,0 +1,9 @@
+import datetime
+b=input("введите дату в формате ДД.ММ.ГГ:")
+c=b.split(".")
+print(c)
+if int(c[2])>22:
+    c[2]="19"+с[2]
+else:
+    c[2]="20"+c[2]
+print(datetime.datetime(int(c[2]), int(c[1]), int(c[0])).strftime("%W"))
