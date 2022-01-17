@@ -1,0 +1,38 @@
+#3
+s="{dfg}(маша)vffh[миша](uekznm)"
+s11=s12=s21=s22=s31=s32=0 #счётчики
+for i in range(len(s)):
+    if s[i]=="(":
+        s11+=1
+    elif s[i]==")":
+        s12+=1
+    elif s[i]=="[":
+        s21+=1
+    elif s[i]=="]":
+        s22+=1
+    elif s[i]=="{":
+        s31+=1
+    elif s[i]=="}":
+        s32+=1
+if s11==s12 and s21==s22 and s31==s32:
+    print("кол-во знаков совпадает")
+    c=[]
+    for i in range(len(s)):
+        if s[i]=="(" or s[i]==")" or s[i]=="[" or s[i]=="]" or s[i]=="{" or s[i]=="}":
+            c.append(s[i])
+    print("вот такие знаки:",c)
+    f=True
+    for i in range((len(c))-1, 2):
+        if c[i]=="(" and c[i+1]==")":
+            pass
+        elif c[i]=="[" and c[i+1]=="]":
+            pass
+        elif c[i]=="{" and c[i+1]=="}":
+            pass
+        else:
+            print("знаки следуют не в том порядке")
+            f=False
+    if f:
+        print("знаки следуют в нужном порядке")
+else:
+    print("количество знаков не совпадает, скобки расставлены неправильно")
