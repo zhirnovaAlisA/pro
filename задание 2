@@ -1,0 +1,13 @@
+#2
+import math
+def func (a, b, e):
+    if a>b:
+        a, b = b, a
+    while b-a>e:
+        c=(a+b)/2
+        if (0.1*(a)**2-a*math.log(a))*(0.1*(c)**2-c*math.log(c))<0:
+            b=c
+        else:
+            a=c
+    print(b)
+func(1, 2, 10**(-5))
